@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
-metadata:   
-  annotations:  
+metadata:
+  annotations:
     tad.gitops.set/image: ".spec.template.spec.containers[0].image"
     tad.gitops.get/image: ".spec.template.spec.containers[0].image"
     tad.gitops.set/replicas: ".spec.replicas"
-    tad.gitops.get/replicas: ".spec.replicas" 
+    tad.gitops.get/replicas: ".spec.replicas"
   name: artifactory-test-quarkus
 spec:
-  replicas: 1 
-  template: 
+  replicas: 1
+  template:
     spec:
       containers:
-      - image: quay.io/redhat-appstudio/dance-bootstrap-app:latest
-        name: container-image  
+        - image: artifactory-artifactory-jcr.apps.rosa.rhtap-services.xmdt.p3.openshiftapps.com/rhtap-docker/random:69125b629c0c1b00f0dd30697dc0c73b9b1eeb62@sha256:2cacc9701fc2dd59ea7a3397e353d1dcaa231e67e474a9db40689048d87e5834
+          name: container-image
